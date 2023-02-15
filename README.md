@@ -29,4 +29,6 @@ so immediately after launch, you can go to the endpointы to check the count of 
 
 2. Check counts
 
-![Alt](Untitled Diagram.drawio)
+#Diagram for SpaceX data structure
+
+![Diagram](https://github.com/Kimiyori/greenatom/blob/main/data_scructure_spacex.drawio.png)
