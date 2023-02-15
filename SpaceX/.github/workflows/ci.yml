@@ -11,10 +11,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run linter
         run: docker-compose --profile test_profile up --exit-code-from lint lint
-
+        working-directory: SpaceX
   tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run tests
         run: docker-compose --profile test_profile up --exit-code-from test test
+        working-directory: SpaceX
