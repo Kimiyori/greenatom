@@ -1,7 +1,10 @@
 services:
   web:
     build: .
-    command: gunicorn app.api.main:main --bind 0.0.0.0:8000 --worker-class aiohttp.GunicornWebWorker --timeout 1800 --reload
+    command: bash -c "
+        alembic upgrade head
+        && gunicorn app.api.main:main --bind 0.0.0.0:8000 --worker-class aiohttp.GunicornWebWorker --timeout 1800 --reload
+      "
     working_dir: /app
     tty: true
     volumes:
