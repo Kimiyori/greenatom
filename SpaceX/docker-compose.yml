@@ -1,0 +1,41 @@
+services:
+  web:
+    build: .
+    command: gunicorn app.api.main:main --bind 0.0.0.0:8000 --worker-class aiohttp.GunicornWebWorker --timeout 1800 --reload
+    working_dir: /app
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: on-failure
+  db:
+    image: postgres:14
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+  test:
+    build: .
+    command: python -m  pytest tests
+    working_dir: /app
+    profiles: [ "test_profile" ]
+    volumes:
+      - .:/aiohttp
+    depends_on:
+      - db
+  lint:
+    build: .
+    command: bash -c "mypy app ; pylint app ; flake8 app "
+    working_dir: /app
+    profiles: [ "test_profile" ]
+    volumes:
+      - .:/aiohttp
+volumes:
+  postgres_data: 
