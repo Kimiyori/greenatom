@@ -5,10 +5,11 @@
 
 :white_check_mark: Base 5 tasks
 
-:white_check_mark: API for SpaceX and count number of publications
+:white_check_mark: Task with SpaceX API and count number of publications
 
 
 # How deploy
+
 Run the following command:
 
 ```
@@ -18,8 +19,8 @@ localhost will be on port 8000
 
 # How use 
 
-Вata from SpaceX will be processed immediately after the first run of docker, 
-so immediately after launch, you can go to the endpointы to check the count of publications
+Data from SpaceX will be processed immediately after the first run of docker, 
+so immediately after launch, you can go to the endpoints to check the count of publications
 
 1. Navigate to following urls:
 
