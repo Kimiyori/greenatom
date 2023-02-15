@@ -9,7 +9,12 @@ class DatabaseContainer(containers.DeclarativeContainer):
     """Container for dao layer"""
 
     wiring_config = containers.WiringConfiguration(
-        packages=["app.spacex.db_handler", "app.api.endpoints","tests.test_spacex","tests.conftest"]
+        packages=[
+            "app.spacex.db_handler",
+            "app.api.endpoints",
+            "tests.test_spacex",
+            "tests.conftest",
+        ]
     )
     session = providers.Resource(db_session)
     rocket = providers.Factory(RocketDAO, session)
