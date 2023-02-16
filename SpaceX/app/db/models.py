@@ -21,8 +21,7 @@ class Base(DeclarativeBase):
 
 class Launch(Base):
     """
-    Model that contains name and images sources of data like Oricon,Shoseki etc.
-    Related to :model: SourceType
+    Model that contains launch data
     """
 
     __tablename__ = "launch"
@@ -34,8 +33,7 @@ class Launch(Base):
 
 class Mission(Base):
     """
-    Model that contains name and images sources of data like Oricon,Shoseki etc.
-    Related to :model: SourceType
+    Model that contains mission data
     """
 
     __tablename__ = "mission"
@@ -47,8 +45,7 @@ class Mission(Base):
 
 class Rocket(Base):
     """
-    Model that contains name and images sources of data like Oricon,Shoseki etc.
-    Related to :model: SourceType
+    Model that contains rocket data
     """
 
     __tablename__ = "rocket"

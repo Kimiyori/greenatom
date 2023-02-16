@@ -30,7 +30,7 @@ class LaunchData(TypedDict):
 
 class DatabaseConnector:
     """
-    Class for handling scraped data and insert it into db
+    Class for handling data and insert it into db
     """
 
     @staticmethod
